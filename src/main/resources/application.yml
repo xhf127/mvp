@@ -1,0 +1,64 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      transaction-isolation:
+    url: jdbc:mysql://localhost:3306/qed_bbq?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true
+    username: root
+    password: Qed!@#456
+  mvc:
+    view:
+      suffix: .html
+    static-path-pattern: /**
+    favicon:
+      enabled: false
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 500MB
+      max-file-size: 500MB
+
+mybatis:
+  type-aliases-package: qed.mvp.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+#logging:
+#  level:
+#    qed.mvp.mapper: DEBUG
+
+#正常人群组
+TPM: "/bbq/matlab/TPM/"
+#临时文件路径
+tmpDir: "/bbq/tmp/"
+#dcm路径
+dcmDir: "/bbq/file/"
+#结果路径
+resultDir: "/bbq/result/"
+
+
+dcmSuffix: ".dcm"
+#算法输出路径
+niiDir: "/bbq/matlab/QED/"
+p: 0.05
+k: 160
+t: 1.7171
+
+aliyun.signName: "雅森科技"
+aliyun.templateCode: "SMS_152212662"
+server:
+  address: 0.0.0.0
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/json

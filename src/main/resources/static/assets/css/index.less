@@ -1,0 +1,130 @@
+// @import './open-iconic-bootstrap.less';
+@import './open-iconic-bootstrap.css';
+
+.btn-primary {
+  color: #fff;
+  background-color: #3688ba;
+  border-color: #3688ba;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #378bbe;
+  border-color: #378bbe;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem #3180b1;
+}
+.btn-primary.disabled,
+.btn-primary:disabled {
+  color: #fff;
+  background-color: #4389b4;
+  border-color: #4389b4;
+}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #3180b1;
+  border-color: #3180b1;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #3180b1;
+}
+
+body,
+html {
+  height: 100%;
+  font-size: 14px;
+}
+
+*{
+  box-sizing: border-box;
+  &::selection {
+      background: none;
+  }
+}
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+}
+
+input[type="number"]{-moz-appearance:textfield;}
+
+/* 滚动槽 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background: rgba(125, 125, 125, 0.3);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.08);
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(125, 125, 125, 0.5);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+header {
+  background-color: #4a98bc;
+  padding: 10px 20px;
+  span {
+    display: inline-block;
+    line-height: 44px;
+    margin-left: 20px;
+    color: #fff;
+    &:nth-last-child(1) {
+      cursor: pointer;
+    }
+  }
+}
+
+.table tr th {
+  background-color: #3688ba;
+  color: #fff;
+  a {
+    text-decoration: none;
+    color: #212529;
+    cursor: pointer;
+  }
+}
+.table tr th,
+.table tr td {
+  white-space: nowrap;
+  cursor: default;
+}
+
+.pagination-detail {
+  display: none;
+}
+.pagination {
+  float: left!important;
+  height: 34px;
+  display: flex!important;
+  .page-link {
+    color: #3688ba!important;
+    outline: none;
+    box-shadow: none;
+  }
+  .page-item.active .page-link {
+    color: #fff!important;
+    background-color: #3688ba;
+    border-color: #3688ba;
+  }
+}
+
+.close {
+  cursor: pointer;
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+  background-color: transparent;
+  border: 0!important;
+  outline: 0!important;
+  box-shadow: none!important;
+  -webkit-appearance: none;
+}
