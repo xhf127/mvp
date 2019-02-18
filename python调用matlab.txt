@@ -1,0 +1,38 @@
+1.安装用于 Python 的 MATLAB 引擎 API
+
+	cd "matlabroot/extern/engines/python"
+	python setup.py install
+
+	matlabroot:matlab安装路径
+
+2.启动用于 Python 的 MATLAB 引擎
+	
+	import matlab.engine
+	eng = matlab.engine.start_matlab()
+	
+	停止引擎
+		eng.quit()
+	异步启动引擎
+		future = matlab.engine.start_matlab(async=True)
+		eng = future.result()
+
+3.调用 MATLAB 函数
+	
+	tf = eng.isprime(37)
+	print(tf)
+	
+	返回多个输出参数，设置 nargout 以从 gcd 返回三个输出参数
+	t = eng.gcd(100.0,80.0,nargout=3)
+	print(t)
+	
+	异步调用
+		future = eng.sqrt(4.0,async=True)
+		ret = future.result()
+		
+		判断是否执行完毕 future.done()
+		取消执行 future.cancel()
+	
+	调用.m脚本
+		triarea.m 
+		eng = matlab.engine.start_matlab()
+		eng.triarea(nargout=0)
